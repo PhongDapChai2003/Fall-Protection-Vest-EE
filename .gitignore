@@ -1,0 +1,46 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# PlatformIO build files
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# Python files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Local settings and secrets
+.env
+.env.*
+!.env.example
+secrets.*
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Large raw data and common generated outputs
+data/**/*.bin
+data/**/*.zip
+data/**/*.parquet
+data/**/*.npy
+data/**/*.npz
+
+# KiCad backup files
+*-backups/
+*.lck
+
+# LTspice generated files
+*.raw
+*.log
+*.fft
+
