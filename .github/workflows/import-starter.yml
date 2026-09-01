@@ -1,0 +1,32 @@
+name: Import starter project
+
+on:
+  push:
+    paths:
+      - Fall-Protection-Vest-EE-GitHub-Starter.zip
+      - .github/workflows/import-starter.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Unpack starter files
+        run: |
+          unzip -q Fall-Protection-Vest-EE-GitHub-Starter.zip -d /tmp/vest-starter
+          cp -R /tmp/vest-starter/Fall-Protection-Vest-EE/. .
+          rm Fall-Protection-Vest-EE-GitHub-Starter.zip
+          rm .github/workflows/import-starter.yml
+
+      - name: Save imported project
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Import electrical team starter project"
+          git push
