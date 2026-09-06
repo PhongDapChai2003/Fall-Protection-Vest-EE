@@ -6,16 +6,6 @@ Biomedical Design Club, Fall 2026
 
 Build and test the sensing, electronics, fall-detection, power, and trigger-control parts of an inflatable fall protection vest.
 
-## What the project slides support
-
-The EE team uses an **IMU to track tri-axial acceleration and angular velocity**. A **microcontroller like an ARM Cortex-M33 used by industry competitors** processes the sensor data and detects a fall using **Signal Vector Magnitude (SVM)**.
-
-The slides describe the system approach. They do **not** require a specific IMU model, development board, or exact STM32 chip.
-
-```text
-IMU -> Cortex-M33 microcontroller -> SVM fall detection -> Safe test output -> Inflation interface later
-```
-
 ## Team-selected engineering direction
 
 These are the EE team's current working choices, not requirements stated by the slides:
@@ -37,9 +27,6 @@ The team should compare candidate boards and IMUs before adding an exact part nu
 - **Algorithm / Data:** collects movement data, analyzes it in Python/Jupyter, develops the SVM logic, and checks false positives
 - **Power / Circuits:** plans the battery, voltage rails, protection, power budget, and safe output-driver circuit
 - **PCB / Hardware:** creates KiCad schematics, breadboard layouts, wiring records, connectors, and PCB files
-- **Biotech / Testing:** researches realistic fall and normal-movement scenarios, helps define safe tests, and documents results
-
-Roles are starting assignments. The team can adjust them as members learn new skills and the design becomes clearer.
 
 ## Repository map
 
@@ -83,11 +70,6 @@ These dates and deliverables come from the uploaded **BDC Fall 2026 Schedule**.
 5. Collect safe movement data and evaluate SVM thresholds in Python/Jupyter.
 6. Build and test each circuit with an LED, buzzer, or other safe dummy load.
 
-## Safety first
-
-This is a student prototype. Do not connect or fire an inflation device during normal firmware, circuit, or algorithm testing. Begin with an LED, buzzer, or other safe dummy load. Any test involving a person, compressed gas, pyrotechnics, or an inflation mechanism needs approval, a written test plan, and proper supervision.
-
-Do not commit names or other personal information with human-movement data. Store large recordings in approved shared storage and link them from the repository.
 
 ## Simple GitHub workflow
 
@@ -102,4 +84,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
 ## Firmware status
 
-The selected direction is STM32 Cortex-M33 with STM32CubeIDE. The exact board/chip decision and the STM32CubeIDE project are not complete yet. Any older ESP32-S3 or PlatformIO starter files in the repository are legacy placeholders and should not be treated as the final architecture.
+The selected direction is STM32 Cortex-M33 with STM32CubeIDE. The exact board/chip decision and the STM32CubeIDE project are not complete yet.
